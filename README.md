@@ -1,145 +1,218 @@
-Toptal RemindMe App
-===================
+
+# Toptal RemindMe App
 
 **Toptal RemindMe App** is a task reminder application built with a Laravel backend (using SQLite) and a React.js frontend. The app allows users to manage their reminders effectively.
 
-Stack
------
+---
 
-*   **Backend**: Laravel with SQLite
+## Stack
 
-*   **Frontend**: React.js
+- **Backend**: Laravel with SQLite  
+- **Frontend**: React.js  
+- **Backend Language**: PHP 8.2  
+- **Frontend Environment**: Node.js 18  
 
-*   **Backend Language**: PHP 8.2
+---
 
-*   **Frontend Environment**: Node.js 18
-
-
-Features
---------
+## Features
 
 ### Backend:
-
-*   RESTful API for managing reminders.
-
-*   Token-based authentication with access and refresh tokens.
-
-*   Scheduling system for automatic task reminders.
-
-*   Unit-tested endpoints.
-
+- RESTful API for managing reminders.
+- Token-based authentication with access and refresh tokens.
+- Scheduling system for automatic task reminders.
+- Unit-tested endpoints.
 
 ### Frontend:
+- User-friendly React.js interface.
+- Real-time reminders and notifications.
+- Responsive design.
 
-*   User-friendly React.js interface.
+---
 
-*   Real-time reminders and notifications.
-
-*   Responsive design.
-
-
-Backend Setup
--------------
+## Backend Setup
 
 ### Prerequisites
-
-*   PHP 8.2
-
-*   Composer
-
-*   SQLite database
-
+- PHP 8.2
+- Composer
+- SQLite database
 
 ### Steps to Set Up
 
-1.  `git clone cd backend`
+1. **Clone the repository**:
+   ```bash
+   git clone <backend-repo-url>
+   cd backend
+   ```
 
-2.  `composer install`
+2. **Install dependencies**:
+   ```bash
+   composer install
+   ```
 
-3.  **Set up environment variables**:
+3. **Set up environment variables**:
+   - Create a `.env` file at the root directory:
+     ```bash
+     cp .env.example .env
+     ```
+   - Create a `.env.testing` file for testing configurations.
 
-    *   `cp .env.example .env`
+4. **Run migrations**:
+   ```bash
+   php artisan migrate
+   ```
 
-    *   Create a `.env.testing` file for testing configurations.
+5. **Seed the database**:
+   ```bash
+   php artisan db:seed --class=UserSeeder
+   ```
 
-4.   `php artisan migrate`
+6. **Start the server**:
+   ```bash
+   php artisan serve
+   ```
 
-5.  `php artisan db:seed --class=UserSeeder`
+7. **Start the scheduler**:
+   ```bash
+   php artisan schedule:work
+   ```
 
-6.  `php artisan serve`
+8. **Run automated tests**:
+   ```bash
+   php artisan test
+   ```
 
-7.  `php artisan schedule:work`
+---
 
-8.  `php artisan test`
+### Sample `.env` File
+```env
+APP_NAME=ToptalRemindMe
+APP_ENV=local
+APP_KEY=base64:your-app-key-here
+APP_DEBUG=true
+APP_URL=http://localhost
 
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
 
-### Sample .env File
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database.sqlite
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopy codeAPP_NAME=ToptalRemindMe  APP_ENV=local  APP_KEY=base64:your-app-key-here  APP_DEBUG=true  APP_URL=http://localhost  LOG_CHANNEL=stack  LOG_LEVEL=debug  DB_CONNECTION=sqlite  DB_DATABASE=/absolute/path/to/database.sqlite  CACHE_DRIVER=file  QUEUE_CONNECTION=sync   `
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+```
 
-### Sample .env.testing File
+---
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopy codeAPP_NAME=ToptalRemindMe  APP_ENV=testing  APP_KEY=base64:your-testing-app-key-here  APP_DEBUG=true  APP_URL=http://localhost  LOG_CHANNEL=stack  LOG_LEVEL=debug  DB_CONNECTION=sqlite  DB_DATABASE=/absolute/path/to/testing-database.sqlite  CACHE_DRIVER=file  QUEUE_CONNECTION=sync   `
+### Sample `.env.testing` File
+```env
+APP_NAME=ToptalRemindMe
+APP_ENV=testing
+APP_KEY=base64:your-testing-app-key-here
+APP_DEBUG=true
+APP_URL=http://localhost
 
-Frontend Setup
---------------
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
+
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/testing-database.sqlite
+
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+```
+
+---
+
+## Frontend Setup
 
 ### Prerequisites
-
-*   Node.js 18
-
-*   npm
-
+- Node.js 18
+- npm
 
 ### Steps to Set Up
 
-1.  bashCopy codegit clone cd frontend
+1. **Clone the repository**:
+   ```bash
+   git clone <frontend-repo-url>
+   cd frontend
+   ```
 
-2.  bashCopy codenpm install
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-3.  bashCopy codenpm run
+3. **Start the frontend**:
+   ```bash
+   npm run
+   ```
 
+---
 
-Project Structure
------------------
+## Project Structure
 
 ### Backend
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   arduinoCopy codebackend/  ├── app/  ├── config/  ├── database/  │   ├── factories/  │   ├── migrations/  │   ├── seeders/  ├── routes/  │   ├── api.php  │   ├── web.php  ├── tests/  │   ├── Feature/  │   ├── Unit/  ├── .env.example  ├── artisan  └── composer.json   `
+```
+backend/
+├── app/
+├── config/
+├── database/
+│   ├── factories/
+│   ├── migrations/
+│   ├── seeders/
+├── routes/
+│   ├── api.php
+│   ├── web.php
+├── tests/
+│   ├── Feature/
+│   ├── Unit/
+├── .env.example
+├── artisan
+└── composer.json
+```
 
 ### Frontend
+```
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.js
+│   ├── index.js
+├── package.json
+└── .env
+```
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   javaCopy codefrontend/  ├── public/  ├── src/  │   ├── components/  │   ├── pages/  │   ├── services/  │   ├── App.js  │   ├── index.js  ├── package.json  └── .env   `
+---
 
-Testing
--------
+## Testing
 
 ### Backend:
-
 Tests are written using PHPUnit. To run the tests:
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopy codephp artisan test   `
+```bash
+php artisan test
+```
 
 ### Frontend:
-
 React testing can be implemented using tools like Jest or React Testing Library.
 
-Notes
------
+---
 
-*   Ensure you have the correct versions of PHP, Composer, Node.js, and npm.
+## Notes
 
-*   SQLite is used for both development and testing environments. Adjust .env files as needed.
+- Ensure you have the correct versions of PHP, Composer, Node.js, and npm.
+- SQLite is used for both development and testing environments. Adjust `.env` files as needed.
 
+---
 
-Contribution
-------------
+## Contribution
 
 Feel free to contribute by submitting issues or pull requests. Fork the repository, make your changes, and create a pull request.
 
-License
--------
+---
+
+## License
 
 This project is licensed under the MIT License.
-
-Let me know if you have more requirements or need further adjustments!
