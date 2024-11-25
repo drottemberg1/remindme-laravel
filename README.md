@@ -1,37 +1,145 @@
-# RemindMe - Laravel Challenge
+Toptal RemindMe App
+===================
 
-Welcome to WeThrive Tech take home challenge!
+**Toptal RemindMe App** is a task reminder application built with a Laravel backend (using SQLite) and a React.js frontend. The app allows users to manage their reminders effectively.
 
-In this repository you will find API specification & scaffolding code for the web app named `RemindMe`.
+Stack
+-----
 
-`RemindMe` is a simple web app that allows users to create reminder for their schedules. It will send email notification to the user when the reminder is due.
+*   **Backend**: Laravel with SQLite
 
-You can check the API specification for this web app in [`rest_api.md`](./docs/rest_api.md).
+*   **Frontend**: React.js
 
-## Your Mission
+*   **Backend Language**: PHP 8.2
 
-1. Build the web app based on specification written in `README.md` and [`rest_api.md`](./docs/rest_api.md). **Treat it as an MVP**. For the backend you must use **[Laravel Framework](https://laravel.com/)**. For the frontend you can use any framework you like or even just vanilla HTML, CSS, & Javascript. You can use [Laravel Blade](https://laravel.com/docs/10.x/blade) as well but make sure it completely uses the REST API.
-2. Use SQLite as the database and include it in your repo to make running and evaluating the test simple
-3. Write automated testing for your backend. At the very minimum you must implement unit testing (not feature testing). If you can write automated testing for your frontend as well, that would be great.
+*   **Frontend Environment**: Node.js 18
 
-## Evaluation
 
-We will evaluate your submission based on these criteria:
+Features
+--------
 
-1. The quality of your web app experience from end-user perspective.
-2. The correctness of your implementation according to the specification docs.
-3. Your choice of tradeoffs during development based on both business & technical perspective.
-4. Readability, maintainability, & testability of your code.
-5. The quality of your workflow when using Github to develop the web app. This includes the quality of your commit messages, pull requests, & branch naming.
+### Backend:
 
-## Submission
+*   RESTful API for managing reminders.
 
-1. Fork this repository & do your work in your own forked repository.
-2. Invite this GitHub account to your repo so that we may clone and run the application.
-3. We will review your submission & get back to you as soon as possible.
+*   Token-based authentication with access and refresh tokens.
 
-> **Note:**
->
-> If you have any questions regarding this challenge, please don't hesitate to open an issue in this repository.
+*   Scheduling system for automatic task reminders.
 
-*** Forked and modified from: https://github.com/riandyrn/remindme-laravel ***
+*   Unit-tested endpoints.
+
+
+### Frontend:
+
+*   User-friendly React.js interface.
+
+*   Real-time reminders and notifications.
+
+*   Responsive design.
+
+
+Backend Setup
+-------------
+
+### Prerequisites
+
+*   PHP 8.2
+
+*   Composer
+
+*   SQLite database
+
+
+### Steps to Set Up
+
+1.  bashCopy codegit clone cd backend
+
+2.  bashCopy codecomposer install
+
+3.  **Set up environment variables**:
+
+    *   bashCopy codecp .env.example .env
+
+    *   Create a .env.testing file for testing configurations.
+
+4.  bashCopy codephp artisan migrate
+
+5.  bashCopy codephp artisan db:seed --class=UserSeeder
+
+6.  bashCopy codephp artisan serve
+
+7.  bashCopy codephp artisan schedule:work
+
+8.  bashCopy codephp artisan test
+
+
+### Sample .env File
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopy codeAPP_NAME=ToptalRemindMe  APP_ENV=local  APP_KEY=base64:your-app-key-here  APP_DEBUG=true  APP_URL=http://localhost  LOG_CHANNEL=stack  LOG_LEVEL=debug  DB_CONNECTION=sqlite  DB_DATABASE=/absolute/path/to/database.sqlite  CACHE_DRIVER=file  QUEUE_CONNECTION=sync   `
+
+### Sample .env.testing File
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopy codeAPP_NAME=ToptalRemindMe  APP_ENV=testing  APP_KEY=base64:your-testing-app-key-here  APP_DEBUG=true  APP_URL=http://localhost  LOG_CHANNEL=stack  LOG_LEVEL=debug  DB_CONNECTION=sqlite  DB_DATABASE=/absolute/path/to/testing-database.sqlite  CACHE_DRIVER=file  QUEUE_CONNECTION=sync   `
+
+Frontend Setup
+--------------
+
+### Prerequisites
+
+*   Node.js 18
+
+*   npm
+
+
+### Steps to Set Up
+
+1.  bashCopy codegit clone cd frontend
+
+2.  bashCopy codenpm install
+
+3.  bashCopy codenpm run
+
+
+Project Structure
+-----------------
+
+### Backend
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   arduinoCopy codebackend/  ├── app/  ├── config/  ├── database/  │   ├── factories/  │   ├── migrations/  │   ├── seeders/  ├── routes/  │   ├── api.php  │   ├── web.php  ├── tests/  │   ├── Feature/  │   ├── Unit/  ├── .env.example  ├── artisan  └── composer.json   `
+
+### Frontend
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   javaCopy codefrontend/  ├── public/  ├── src/  │   ├── components/  │   ├── pages/  │   ├── services/  │   ├── App.js  │   ├── index.js  ├── package.json  └── .env   `
+
+Testing
+-------
+
+### Backend:
+
+Tests are written using PHPUnit. To run the tests:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopy codephp artisan test   `
+
+### Frontend:
+
+React testing can be implemented using tools like Jest or React Testing Library.
+
+Notes
+-----
+
+*   Ensure you have the correct versions of PHP, Composer, Node.js, and npm.
+
+*   SQLite is used for both development and testing environments. Adjust .env files as needed.
+
+
+Contribution
+------------
+
+Feel free to contribute by submitting issues or pull requests. Fork the repository, make your changes, and create a pull request.
+
+License
+-------
+
+This project is licensed under the MIT License.
+
+Let me know if you have more requirements or need further adjustments!
