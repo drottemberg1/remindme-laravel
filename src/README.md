@@ -1,66 +1,145 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Toptal RemindMe App
+===================
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Toptal RemindMe App** is a task reminder application built with a Laravel backend (using SQLite) and a React.js frontend. The app allows users to manage their reminders effectively.
 
-## About Laravel
+Stack
+-----
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+*   **Backend**: Laravel with SQLite
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+*   **Frontend**: React.js
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*   **Backend Language**: PHP 8.2
 
-## Learning Laravel
+*   **Frontend Environment**: Node.js 18
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Features
+--------
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Backend:
 
-## Laravel Sponsors
+*   RESTful API for managing reminders.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+*   Token-based authentication with access and refresh tokens.
 
-### Premium Partners
+*   Scheduling system for automatic task reminders.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+*   Unit-tested endpoints.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Frontend:
 
-## Code of Conduct
+*   User-friendly React.js interface.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+*   Real-time reminders and notifications.
 
-## Security Vulnerabilities
+*   Responsive design.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+Backend Setup
+-------------
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Prerequisites
+
+*   PHP 8.2
+
+*   Composer
+
+*   SQLite database
+
+
+### Steps to Set Up
+
+1.  bashCopy codegit clone cd backend
+
+2.  bashCopy codecomposer install
+
+3.  **Set up environment variables**:
+
+    *   bashCopy codecp .env.example .env
+
+    *   Create a .env.testing file for testing configurations.
+
+4.  bashCopy codephp artisan migrate
+
+5.  bashCopy codephp artisan db:seed --class=UserSeeder
+
+6.  bashCopy codephp artisan serve
+
+7.  bashCopy codephp artisan schedule:work
+
+8.  bashCopy codephp artisan test
+
+
+### Sample .env File
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopy codeAPP_NAME=ToptalRemindMe  APP_ENV=local  APP_KEY=base64:your-app-key-here  APP_DEBUG=true  APP_URL=http://localhost  LOG_CHANNEL=stack  LOG_LEVEL=debug  DB_CONNECTION=sqlite  DB_DATABASE=/absolute/path/to/database.sqlite  CACHE_DRIVER=file  QUEUE_CONNECTION=sync   `
+
+### Sample .env.testing File
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopy codeAPP_NAME=ToptalRemindMe  APP_ENV=testing  APP_KEY=base64:your-testing-app-key-here  APP_DEBUG=true  APP_URL=http://localhost  LOG_CHANNEL=stack  LOG_LEVEL=debug  DB_CONNECTION=sqlite  DB_DATABASE=/absolute/path/to/testing-database.sqlite  CACHE_DRIVER=file  QUEUE_CONNECTION=sync   `
+
+Frontend Setup
+--------------
+
+### Prerequisites
+
+*   Node.js 18
+
+*   npm
+
+
+### Steps to Set Up
+
+1.  bashCopy codegit clone cd frontend
+
+2.  bashCopy codenpm install
+
+3.  bashCopy codenpm run
+
+
+Project Structure
+-----------------
+
+### Backend
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   arduinoCopy codebackend/  ├── app/  ├── config/  ├── database/  │   ├── factories/  │   ├── migrations/  │   ├── seeders/  ├── routes/  │   ├── api.php  │   ├── web.php  ├── tests/  │   ├── Feature/  │   ├── Unit/  ├── .env.example  ├── artisan  └── composer.json   `
+
+### Frontend
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   javaCopy codefrontend/  ├── public/  ├── src/  │   ├── components/  │   ├── pages/  │   ├── services/  │   ├── App.js  │   ├── index.js  ├── package.json  └── .env   `
+
+Testing
+-------
+
+### Backend:
+
+Tests are written using PHPUnit. To run the tests:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopy codephp artisan test   `
+
+### Frontend:
+
+React testing can be implemented using tools like Jest or React Testing Library.
+
+Notes
+-----
+
+*   Ensure you have the correct versions of PHP, Composer, Node.js, and npm.
+
+*   SQLite is used for both development and testing environments. Adjust .env files as needed.
+
+
+Contribution
+------------
+
+Feel free to contribute by submitting issues or pull requests. Fork the repository, make your changes, and create a pull request.
+
+License
+-------
+
+This project is licensed under the MIT License.
+
+Let me know if you have more requirements or need further adjustments!

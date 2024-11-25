@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function reminders()
+{
+    return $this->hasMany(Reminder::class);
+}
 }
