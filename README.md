@@ -52,25 +52,25 @@ Backend Setup
 
 ### Steps to Set Up
 
-1.  bashCopy codegit clone cd backend
+1.  `git clone cd backend`
 
-2.  bashCopy codecomposer install
+2.  `composer install`
 
 3.  **Set up environment variables**:
 
-    *   bashCopy codecp .env.example .env
+    *   `cp .env.example .env`
 
-    *   Create a .env.testing file for testing configurations.
+    *   Create a `.env.testing` file for testing configurations.
 
-4.  bashCopy codephp artisan migrate
+4.   `php artisan migrate`
 
-5.  bashCopy codephp artisan db:seed --class=UserSeeder
+5.  `php artisan db:seed --class=UserSeeder`
 
-6.  bashCopy codephp artisan serve
+6.  `php artisan serve`
 
-7.  bashCopy codephp artisan schedule:work
+7.  `php artisan schedule:work`
 
-8.  bashCopy codephp artisan test
+8.  `php artisan test`
 
 
 ### Sample .env File
