@@ -171,10 +171,10 @@ FILESYSTEM_DISK=local
    ```bash
    npm run
    ```
-
+---
 ### Setup `config/WTConfig.js` File
 Enter  `API_URL` corresponding to the laravel endpoints. If you are running `php artisan serve` then it should be `http://localhost:8000/api` by default.
----
+
 
 
 
