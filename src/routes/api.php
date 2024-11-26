@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ReminderController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -31,7 +32,7 @@ Route::middleware('auth:api')->group(function () {
     });
 });
 
-
-Route::put('/session', [SessionController::class, 'refreshToken']);
-Route::post('/session', [SessionController::class, 'login']);
-Route::delete('/session', [SessionController::class, 'logout']);
+Route::post('/user',     [UserController::class, 'store']);
+Route::put('/session',   [SessionController::class, 'refreshToken']);
+Route::post('/session',  [SessionController::class, 'login']);
+Route::delete('/session',[SessionController::class, 'logout']);

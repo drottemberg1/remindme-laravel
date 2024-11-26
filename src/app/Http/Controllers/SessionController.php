@@ -56,11 +56,7 @@ class SessionController extends Controller
         return response()->json([
             'ok' => true,
             'data' => [
-                'user' => [
-                    'id' => $user->id,
-                    'email' => $user->email,
-                    'name' => $user->name,
-                ],
+                'user' => $user,
                 'access_token' => $accessToken,
                 'refresh_token' => $refreshToken,
             ]
